@@ -28,6 +28,36 @@ Avant de commencer, assurez-vous que vous disposez de tout le matériel nécessa
 - 1 câble USB pour connecter l'ESP32 à votre ordinateur
 - 1 alimentation pour la matrice LED (vérifiez les spécifications de la matrice LED pour connaître la tension et le courant nécessaires)
 - Des fils de connexion pour connecter l'ESP32 à la matrice LED
+
+Pour créer votre propre tableau hexadécimal, vous devez d'abord créer une image .png de 16 par 16 pixels. Vous pouvez utiliser n'importe quel logiciel d'édition d'images pour cela.
+
+Une fois que vous avez créé votre image .png, vous devez télécharger et installer le logiciel lcd-image-converter à partir du lien suivant : https://lcd-image-converter.riuson.com/en/about/
+
+Une fois que vous avez installé lcd-image-converter, ouvrez votre image .png dans le logiciel. Dans la fenêtre "Prepare Scanning", cochez la case "Use Custom Script" et collez le code suivant :
+
+for (var y = 0; y < image.height; y++) {
+if (y % 2 == 0) {
+// even rows (0, 2, 4, ...)
+for (var x = image.width - 1; x >= 0; x--) {
+image.addPoint(x, y);
+}
+} else {
+// odd rows (1, 3, 5, ...)
+for (var x = 0; x < image.width; x++) {
+image.addPoint(x, y);
+}
+}
+}
+
+Assurez-vous que "Preset" est réglé sur "Color a8r8g8b8". Dans la section "Conversion Options", cliquez sur "Show Preview" pour prévisualiser votre tableau hexadécimal.
+
+Vous pouvez maintenant utiliser le code généré pour votre tableau hexadécimal dans votre projet.
+
+
+
+
+
+
 - Un ordinateur avec Arduino IDE et Python installés
 
 Assurez-vous d'avoir tous ces éléments avant de continuer avec la configuration de votre matrice LED.
