@@ -163,7 +163,7 @@ Pour envoyer des commandes à votre matrice LED via MQTT, vous pouvez publier de
 Vous pouvez utiliser n'importe quel moyen pour publier ces messages MQTT, que ce soit un dashboard sur votre système domotique ou un autre programme que vous avez créé. Assurez-vous simplement que le message est publié sur le topic "MatriceLed" avec la commande appropriée pour contrôler votre matrice LED.
 
 Félicitations ! Vous avez terminé le tutoriel pour personnaliser votre matrice LED contrôlée par MQTT avec ESP32 et l'envoi de commandes par MQTT depuis votre ordinateur. Vous avez appris comment personnaliser le code Arduino pour contrôler votre matrice LED, comment créer un script Python pour envoyer des commandes MQTT et comment exécuter automatiquement le script au démarrage de votre ordinateur. Nous espérons que vous apprécierez l'utilisation de votre matrice LED personnalisée et que vous continuerez à explorer les possibilités offertes par l'IoT et la domotique.
-
+Images du projets:
 <div style="display: flex;">
   <img src="Media/choco.jpg" alt="choco" width="200" height="200" style="margin-right: 10px;">
   <img src="Media/appli.jpg" alt="appli" width="200" height="200" style="margin-right: 10px;">
